@@ -1,0 +1,13 @@
+.title {
+  width: 100%;
+  height: 80vh;
+  background: white;
+  color: black;
+}
+
+.flex-display {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}

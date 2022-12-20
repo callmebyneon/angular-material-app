@@ -1,3 +1,4 @@
+import { PageToggleService } from '../../../share/page-toggle.service';
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
@@ -15,20 +16,25 @@ export class TimeDisplayComponent implements OnInit {
 
   timeInterval: any;
 
-  constructor() { }
+  constructor(
+    private PageToggleService: PageToggleService // can inject! (stopwatch ->)
+    // => (component level) 같은 서비스 provider를 가지고 있을 때, 가장 먼저 만나는 서비스 제공
+    // => (module level) 공유되지 않음? [#서비스 - Angular Injector 1]
+  ) { }
 
   timeStart() {
+    this.timeStop()
     this.timeInterval = setInterval(() => {
       // 60sec -> 1min
       if (this.sec === 59) {
-        this.min++
         this.sec = 0
+        this.min++
       }
 
-      // 1000ms -> 1sec
-      if (this.ms === 999) {
-        this.sec++
+      // 1000ms (10 * 100) -> 1sec
+      if (this.ms === 99) {
         this.ms = 0
+        this.sec++
       }
 
       this.ms++
@@ -41,6 +47,8 @@ export class TimeDisplayComponent implements OnInit {
 
   timeReset() {
     this.timeStop()
+    this.min = 0
+    this.sec = 0
     this.ms = 0
   }
 
@@ -66,8 +74,29 @@ export class TimeDisplayComponent implements OnInit {
   //     }
   //   }
   // }
-
+  ngOnChanges(): void {
+    console.log('child# %cng On Changes', 'color: yellow;')
+  }
   ngOnInit(): void {
+    console.log('child# %cng On Init', 'color: yellow;')
+  }
+  ngDoCheck(): void {
+    console.log('child# %cng Do Check', 'color: yellow;')
+  }
+  ngAfterContentInit(): void {
+    console.log('child# %cng After Content Init', 'color: yellow;')
+  }
+  ngAfterContentChecked(): void {
+    console.log('child# %cng After Content Checked', 'color: yellow;')
+  }
+  ngAfterViewInit(): void {
+    console.log('child# %cng After View Init', 'color: yellow;')
+  }
+  ngAfterViewChecked(): void {
+    console.log('child# %cng After View Checked', 'color: yellow;')
+  }
+  ngDestroy(): void {
+    console.log('ng Destroy')
   }
 
 }

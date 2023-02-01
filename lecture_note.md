@@ -3,6 +3,7 @@
 [Course Information👉](https://www.inflearn.com/course/Angular)
 
 ## Angular Component
+
 ### 컴포넌트 생성
 
 ```shell
@@ -14,8 +15,8 @@ ng g c <component-name>
 # ng generate component section/stopwatch
 ```
 
-
 ## Angular Module
+
 ### 모듈 생성
 
 ```shell
@@ -30,6 +31,7 @@ ng g m <module-name>
 
 - 비슷한 기능(관심사)를 묶어 코드의 중복을 제거 => 재사용 가능한 코드 뭉치로 만들 수 있음
   - ==> 컴포넌트 간 데이터 중개
+
 ### 서비스 생성
 
 ```shell
@@ -42,9 +44,10 @@ ng g s <service-name>
 
 ## Angular Injection
 
-> * DI: Dependency Injection
+> - DI: Dependency Injection
 
 - Injectors follow angular component tree structure => A Component has no Injector or a Injector by Provider
+
 ```ts
 // 1. in component.ts
 @Component({
@@ -57,6 +60,7 @@ ng g s <service-name>
 // => use first found service in path: (parent component? -> grandparent component? -> ... -> root component)
 // => can use this service in this component and children
 ```
+
 ```ts
 // 2. in module.ts
 @NgModule({
@@ -68,6 +72,7 @@ ng g s <service-name>
 // => find service from parent module(this component imported)
 // => use first found service in path: (parent module? -> grandparent module? -> ... -> root module)
 ```
+
 ```ts
 // 3. in service.ts
 @Injectable({
@@ -78,11 +83,10 @@ ng g s <service-name>
 })
 ```
 
-> **Example of finding injector   
->   - my component (self) -> parent component -> ... -> root component -> root module -> child module -> ... -> my module   
->   - If find service provider, stop searching it
-
-
+> **Example of finding injector
+>
+> - my component (self) -> parent component -> ... -> root component -> root module -> child module -> ... -> my module
+> - If find service provider, stop searching it
 
 ## Angular Component Life Cycle
 
@@ -96,9 +100,9 @@ ng g s <service-name>
   - ngAfterViewChecked
   - ngDestroy
 
-
 - After children components rendered, parent component run init method.
 - example console.log
+
   ```
   parent# ng After Content Init
   parent# ng After Content Checked

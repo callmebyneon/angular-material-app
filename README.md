@@ -1,4 +1,6 @@
-# AngularMaterialApp
+# Angular Material App
+
+> Start with [this online course](https://www.inflearn.com/course/Angular) & update layout with [Angular Material.](https://material.angular.io/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
 

@@ -74,29 +74,30 @@ export class TimeDisplayComponent implements OnInit {
   //     }
   //   }
   // }
-  ngOnChanges(): void {
-    console.log('child# %cng On Changes', 'color: yellow;')
-  }
+
+  // ngOnChanges(): void {
+  //   console.log('child# %cng On Changes', 'color: yellow;')
+  // }
   ngOnInit(): void {
-    console.log('child# %cng On Init', 'color: yellow;')
+
   }
-  ngDoCheck(): void {
-    console.log('child# %cng Do Check', 'color: yellow;')
-  }
-  ngAfterContentInit(): void {
-    console.log('child# %cng After Content Init', 'color: yellow;')
-  }
-  ngAfterContentChecked(): void {
-    console.log('child# %cng After Content Checked', 'color: yellow;')
-  }
-  ngAfterViewInit(): void {
-    console.log('child# %cng After View Init', 'color: yellow;')
-  }
-  ngAfterViewChecked(): void {
-    console.log('child# %cng After View Checked', 'color: yellow;')
-  }
-  ngDestroy(): void {
-    console.log('ng Destroy')
-  }
+  // ngDoCheck(): void {
+  //   console.log('child# %cng Do Check', 'color: yellow;')
+  // }
+  // ngAfterContentInit(): void {
+  //   console.log('child# %cng After Content Init', 'color: yellow;')
+  // }
+  // ngAfterContentChecked(): void {
+  //   console.log('child# %cng After Content Checked', 'color: yellow;')
+  // }
+  // ngAfterViewInit(): void {
+  //   console.log('child# %cng After View Init', 'color: yellow;')
+  // }
+  // ngAfterViewChecked(): void {
+  //   console.log('child# %cng After View Checked', 'color: yellow;')
+  // }
+  // ngDestroy(): void {
+  //   console.log('ng Destroy')
+  // }
 
 }

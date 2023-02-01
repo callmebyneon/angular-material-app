@@ -1,6 +1,14 @@
+#header {
+  margin: 0;
+  border-bottom: 1px solid #BAD3FC;
+  box-sizing: border-box;
+}
+
 .title {
   width: 100%;
-  height: 10vh;
-  background: gray;
-  color: white
+  color: gray;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
 }

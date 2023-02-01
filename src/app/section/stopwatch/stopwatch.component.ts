@@ -36,17 +36,17 @@ export class StopwatchComponent implements OnInit {
 
 
 
-  ngAfterContentInit(): void {
-    console.log('parent# %cng After Content Init', 'color: orange')
-  }
-  ngAfterContentChecked(): void {
-    console.log('parent# %cng After Content Checked', 'color: orange')
-  }
-  ngAfterViewInit(): void {
-    console.log('parent# %cng After View Init', 'color: orange')
-  }
-  ngAfterViewChecked(): void {
-    console.log('parent# %cng After View Checked', 'color: orange')
-  }
+  // ngAfterContentInit(): void {
+  //   console.log('parent# %cng After Content Init', 'color: orange')
+  // }
+  // ngAfterContentChecked(): void {
+  //   console.log('parent# %cng After Content Checked', 'color: orange')
+  // }
+  // ngAfterViewInit(): void {
+  //   console.log('parent# %cng After View Init', 'color: orange')
+  // }
+  // ngAfterViewChecked(): void {
+  //   console.log('parent# %cng After View Checked', 'color: orange')
+  // }
 
 }

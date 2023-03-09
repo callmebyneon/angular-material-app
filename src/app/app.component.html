@@ -8,7 +8,7 @@
   <nav>
     <app-navigator id="nav"></app-navigator>
   </nav>
-  <main id="main">
+  <main id="main" [@routeAnimations]="getRouteAnimationData()">
     <router-outlet></router-outlet>
   </main>
 </div>

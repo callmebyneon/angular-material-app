@@ -9,10 +9,10 @@ import { UploadComponent } from './upload/upload.component';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'redirect', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'upload', component: UploadComponent },
-  { path: 'download', component: DownloadComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent, data: { animation: 'dashboardPage' } },
+  { path: 'upload', component: UploadComponent, data: { animation: 'uploadPage' } },
+  { path: 'download', component: DownloadComponent, data: { animation: 'downloadPage' } },
+  { path: 'login', component: LoginComponent, data: { animation: 'loginPage' } },
 ];
 
 @NgModule({

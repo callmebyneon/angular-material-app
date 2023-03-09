@@ -1,0 +1,72 @@
+@use '../breakpoint' as breakpoint;
+
+$nav-width: 240px;
+$header-height: 60px;
+
+#app-layout {
+  display: grid;
+  grid-template-columns: $nav-width minmax(calc(100vw - $nav-width), auto);
+  grid-template-rows: $header-height minmax(calc(100vh - $header-height), auto);
+  grid-template-areas:
+  'header header'
+  'nav main';
+
+  @media screen and (max-width: breakpoint.$md) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & header#header {
+    grid-area: header;
+    width: 100vw;
+    height: $header-height;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--primary-light);
+
+    & .actions {
+      margin-left: auto;
+    }
+  }
+
+  & nav #nav {
+    grid-area: nav;
+    width: $nav-width;
+    height: calc(100vh - $header-height);
+    top: $header-height;
+    padding: 16px 16px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: vaR(--background-paper);
+    border-right: 1px solid var(--primary-light);
+    overflow-x: hidden;
+    overflow-y: overlay;
+
+    @media screen and (max-width: breakpoint.$md) {
+      height: 100vh;
+      top: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1200;
+    }
+  }
+
+  & main#main {
+    grid-area: main;
+    width: calc(100vw - $nav-width);
+    height: calc(100vh - $header-height);
+    padding: 40px 40px 60px 40px;
+    position: relative;
+    background-color: var(--background-default);
+    overflow: auto;
+
+    @media screen and (max-width: breakpoint.$md) {
+      width: 100vw;
+    }
+  }
+}

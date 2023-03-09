@@ -1,14 +1,14 @@
-<app-header></app-header>
-
-<mat-drawer-container class="example-container">
-
-  <mat-drawer mode="side" opened>
-    <app-sidebar></app-sidebar>
-  </mat-drawer>
-
-  <mat-drawer-content>
-    <app-section></app-section>
-    <app-footer></app-footer>
-  </mat-drawer-content>
-
-</mat-drawer-container>
+<div id="app-layout">
+  <header id="header">
+    <div>Logo</div>
+    <div class="actions">
+      <app-button-logout></app-button-logout>
+    </div>
+  </header>
+  <nav>
+    <app-navigator id="nav"></app-navigator>
+  </nav>
+  <main id="main">
+    <router-outlet></router-outlet>
+  </main>
+</div>

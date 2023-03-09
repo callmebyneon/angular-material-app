@@ -1,0 +1,29 @@
+<div class="login-container">
+  <mat-card class="login-form__box" [@boxSlide]="slideState">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <div class="login-form">
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Id</mat-label>
+        <input matInput name="id" type="text"
+          placeholder="Enter your id" title="아이디를 입력하세요"
+          [formControl]="username" required>
+          <mat-error *ngIf="username.invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" floatLabel="always">
+          <mat-label>Password</mat-label>
+          <input matInput name="pw" [type]="hide ? 'password' : 'text'"
+            placeholder="Enter your password" title="비밀번호를 입력하세요"
+            [formControl]="password" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="password.invalid">{{ getErrorMessage() }}</mat-error>
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" (click)="login()">Login</button>
+    </div>
+  </mat-card>
+</div>

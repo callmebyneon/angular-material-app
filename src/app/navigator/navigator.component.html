@@ -1,0 +1,16 @@
+<div class="menus">
+  <div cdkMenu class="nav-group" *ngFor="let nav of navItems">
+    <p cdkMenuItem class="nav-item nav-item__title">
+      <span matListItemTitle>{{nav.title}}</span>
+    </p>
+    <a cdkMenuItem mat-button class="nav-item nav-item__anchor"
+      *ngFor="let item of nav.items"
+      routerLink={{item.path}} routerLinkActive="active" ariaCurrentWhenActive="page">
+      <mat-icon class="start-icon">{{item.icon}}</mat-icon>
+      {{item.title}}
+    </a>
+  </div>
+</div>
+<div class="actions">
+  <app-button-logout></app-button-logout>
+</div>

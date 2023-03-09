@@ -1,3 +1,4 @@
+@use 'color' as c;
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
@@ -12,30 +13,223 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$angular-material-app-primary: mat.define-palette(mat.$indigo-palette);
-$angular-material-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$a-m-e-primary: mat.define-palette(mat.$indigo-palette);
+$a-m-e-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$angular-material-app-warn: mat.define-palette(mat.$red-palette);
+$a-m-e-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$angular-material-app-theme: mat.define-light-theme((
+$a-m-e-theme: mat.define-light-theme((
   color: (
-    primary: $angular-material-app-primary,
-    accent: $angular-material-app-accent,
-    warn: $angular-material-app-warn,
-  )
+    primary: $a-m-e-primary,
+    accent: $a-m-e-accent,
+    warn: $a-m-e-warn,
+  ),
 ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($angular-material-app-theme);
+@include mat.all-component-themes($a-m-e-theme);
 
 /* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
 * { box-sizing: border-box; }
+
+html, body { height: 100%; font-size: 14px; }
+body { margin: 0; font-family: 'SpoqaHanSansNeo', 'Helvetica Neue', sans-serif; }
+
+h1, h2, h3, h4, h5, h6 { margin: 0; }
+
+:root {
+  // common
+  --black: #000;
+  --white: #FFF;
+
+  // paper & background
+  --background-paper: #FFF;
+  --background-default: #F4F9FF;
+  --background-dim: #A8ACC4;
+  --background-dimmed: rgba(81, 89, 136, 0.5);
+
+  // primary
+  --primary-tint: #EAF3FE;
+  --primary-lighter: #DCE9FD;
+  --primary-light:#BAD3FC;
+  --primary-main: #507BE8;
+  --primary-dark: #3b5bdb;
+  --primary-darker: rgb(54, 79, 199);
+
+  // secondary
+  --secondary-tint: #fcfdff;
+  --secondary-lighter: #edf4fe;
+  --secondary-light: #adc1de;
+  --secondary-main: #778aae;
+  --secondary-dark: #6d799f;
+  --secondary-darker: #5f657b;
+
+  // info
+  --info-tint: #faf7ff;
+  --info-lighter: #eeebfc;
+  --info-light: #e0d9fa;
+  --info-main: #837ae6;
+  --info-dark: #7969dc;
+  --info-darker: #6857c7;
+
+  // success
+  --success-tint: #edfdf3;
+  --success-lighter: #e0fae9;
+  --success-light: #b7f4dc;
+  --success-main: #42b9a5;
+  --success-dark: #129785;
+  --success-darker: #0a876a;
+
+  // warning
+  --warning-tint: #FFF9DB;
+  --warning-lighter: #FFF3BF;
+  --warning-light: #FFE066;
+  --warning-main: #FAB005;
+  --warning-dark: #F59F00;
+  --warning-darker: #EB8211;
+
+  // error
+  --error-tint: #FEF3EC;
+  --error-lighter: #FEE8DF;
+  --error-light: #FDCCBF;
+  --error-main: #EC5C63;
+  --error-dark: #CD474A;
+  --error-darker: #C13847;
+
+  // grey
+  --grey-50: #FAFAFA;
+  --grey-100: #F5F5F5;
+  --grey-200: #EEEEEE;
+  --grey-300: #E0E0E0;
+  --grey-400: #BDBDBD;
+  --grey-500: #9E9E9E;
+  --grey-600: #757575;
+  --grey-700: #616161;
+  --grey-800: #424242;
+  --grey-900: #212121;
+
+  // action opacity
+  --activated-opacity: 0.12;
+  --hover-opacity: 0.1;
+  --selected-opacity: 0.22;
+  --disabled-opacity: 0.38;
+  --focus-opacity: 0.12;
+}
+
+mat-form-field.mat-form-field {
+  font-size: 1rem;
+}
+
+.mat-icon {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+
+  &.start-icon {
+    margin-right: 4px;
+  }
+
+  &.end-icon {
+    margin-left: 4px;
+  }
+}
+
+.typography {
+  color: rgba(c.$black, 0.87);
+  font-family: inherit;
+
+  &.typo-h1 {
+    font-weight: 700;
+    font-size: 6rem;
+    line-height: 1.167;
+    letter-spacing: 0em;
+  }
+
+  &.typo-h2 {
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 1.11;
+    letter-spacing: 0em;
+  }
+
+  &.typo-h3 {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 1.2;
+    letter-spacing: 0em;
+  }
+
+  &.typo-h4 {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1.235;
+    letter-spacing: 0em;
+  }
+
+  &.typo-h5 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.334;
+    letter-spacing: 0em;
+  }
+
+  &.typo-h6 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.571428571428572;
+    letter-spacing: 0em;
+  }
+
+  &.typo-sub1 {
+    color: rgba(c.$black, 0.6);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.714285714285714;
+    letter-spacing: 0.00938em;
+  }
+
+  &.typo-sub2 {
+    color: rgba(c.$black, 0.6);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.692307692307692;
+    letter-spacing: 0.00938em;
+  }
+
+  &.typo-body1 {
+    color: rgba(c.$black, 0.72);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+  }
+
+  &.typo-body2 {
+    color: rgba(c.$black, 0.6);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.6;
+    letter-spacing: 0.00938em;
+  }
+
+  &.typo-button {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.6;
+    letter-spacing: 0.028em;
+    text-transform: capitalize;
+  }
+
+  &.typo-caption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.6;
+    letter-spacing: 0.028em;
+    text-transform: capitalize;
+  }
+}

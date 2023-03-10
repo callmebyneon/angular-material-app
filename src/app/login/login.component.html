@@ -23,7 +23,7 @@
           <mat-error *ngIf="password.invalid">{{ getErrorMessage() }}</mat-error>
       </mat-form-field>
 
-      <button mat-flat-button color="primary" (click)="login()">Login</button>
+      <button mat-flat-button color="primary" (click)="$event.preventDefault();login()">Login</button>
     </div>
   </mat-card>
 </div>
